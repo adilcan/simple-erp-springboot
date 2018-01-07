@@ -50,15 +50,12 @@ public class Service extends BaseEntity {
 	@ManyToMany
 	private List<Tag> tags;
 
-	private SalePrice salePrice;
+	private Double salePrice;
 
-	private Long thelowestSalePrice;
+	private TaxType taxType;
 
-	//Rate of KDV'yi Enum ile yapamadım
+	private Double minSalePrice;
 
-    //Muhasebe Kodu Satış ile Muhasebe Kodu Satınalma'yı Enum ile yapamadım
-
-
-
+	private TaxRate taxRate;
 
 }
