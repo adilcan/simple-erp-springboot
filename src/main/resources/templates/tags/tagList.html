@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>reference</th>
+                <th>description</th>
+                <th>color</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="tag:${tags}" th:object="${tag}">
+                <td th:text="*{reference}"></td>
+                <td th:text="*{description}"></td>
+                <td th:text="*{color}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
