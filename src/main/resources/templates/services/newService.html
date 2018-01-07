@@ -1,0 +1,68 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<head>
+
+</head>
+<body>
+<div>
+    <form method="post" th:action="@{services/new}" th:object="${service}">
+
+        <label for="reference">Ref.</label>
+        <input type="text" id="reference" th:field="*{reference}"/>
+
+        <br>
+
+        <label for="label">Etiket</label>
+        <input type="text" id="label" th:field="*{label}"/>
+
+        <br>
+
+        <label for="purchaseStatus">Durum(Alış)</label>
+        <select id="purchaseStatus">
+            <option value=""></option>
+        </select>
+
+        <br>
+
+        <label for="description">Açıklama</label>
+        <input type="text" id="description" th:field="*{description}"/>
+
+        <br>
+
+        <label for="publicUrl">Genel URL</label>
+        <input type="url" id="publicUrl" th:field="*{publicUrl}"/>
+
+        <br>
+
+        <label for="durationValue">Süre</label>
+        <input type="text" id="durationValue" th:field="*{durationValue}"/>
+
+        <br>
+
+        <label for="durationType">Duration Type</label>
+        <input type="text" id="durationType"/>
+
+        <br>
+
+        <label for="note">Not (faturalarda, tekliflerde ... görünmez).</label>
+        <input type="text" id="note" th:field="*{note}"/>
+
+        <br>
+
+        <label for="tags">Etiketler/kategoriler</label>
+        <input type="text" id="tags" />
+
+        <br>
+
+        <label for="salePrice">Satış Fiyatı</label>
+        <input type="text" id="salePrice" th:field="*{salePrice}"/>
+
+        <br>
+
+        <button type="submit">Olustur</button>
+
+
+    </form>
+</div>
+</body>
+</html>

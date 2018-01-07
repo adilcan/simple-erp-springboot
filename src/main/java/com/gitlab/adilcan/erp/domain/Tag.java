@@ -7,6 +7,9 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 /**
  * Created on January, 2018
@@ -27,7 +30,8 @@ public class Tag extends BaseEntity {
 
 	private String color;
 
-	private Tag parent;
+	@ManyToMany
+	private List<Service> services;
 
 	//TODO add service collection and annotate as @ManyToMany
 

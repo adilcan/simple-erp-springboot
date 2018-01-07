@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>reference</th>
+                <th>label</th>
+                <th>saleStatus</th>
+                <th>purchaseStatus</th>
+                <th>description</th>
+                <th>publicUrl</th>
+                <th>durationValue</th>
+                <th>note</th>
+                <th>tags</th>
+                <th>salePrice</th>
+                <th>thelowestSalePrice</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="service:${services}" th:object="${service}">
+                <td th:text=*{reference}"></td>
+                <td th:text="*{label}"></td>
+                <td th:text="*{saleStatus}"></td>
+                <td th:text=*"purchaseStatus}"></td>
+                <td th:text="*{description}"></td>
+                <td th:text="*{publicUrl}"></td>
+                <td th:text="*{durationValue}"></td>
+                <td th:text="*{note}"></td>
+                <td th:text="*{tags}"></td>
+                <td th:text="*{salePrice}"></td>
+                <td th:text="*{thelowestSalePrice}"></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
