@@ -5,7 +5,7 @@
 </head>
 <body>
 <div>
-  <form method="post" th:action="@{services/new}" th:object="${service}">
+  <form method="post" th:action="@{/services/new}" th:object="${service}">
 
     <label for="reference">Ref.</label>
     <input type="text" id="reference" th:field="*{reference}"/>

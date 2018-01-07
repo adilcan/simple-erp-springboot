@@ -1,5 +1,7 @@
 package com.gitlab.adilcan.erp.controller;
 
+import com.gitlab.adilcan.erp.domain.PurchaseStatus;
+import com.gitlab.adilcan.erp.domain.SaleStatus;
 import com.gitlab.adilcan.erp.domain.Service;
 import com.gitlab.adilcan.erp.repository.ServiceRepository;
 import com.gitlab.adilcan.erp.repository.TagRepository;
@@ -7,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 
 @Controller
 @RequestMapping("/services")
@@ -21,6 +22,11 @@ public class ServiceController {
 
     @GetMapping("")
     public String getServiceList(Model model){
+
+        model.addAttribute("notSaleAndNotPurchaseCount", serviceRepository.countBySaleStatusAndPurchaseStatus(SaleStatus.NOT_FOR_SALE, PurchaseStatus.NOT_FOR_PURCHASE));
+        model.addAttribute("forSaleCount", serviceRepository.countBySaleStatusAndPurchaseStatus(SaleStatus.FOR_SALE, PurchaseStatus.NOT_FOR_PURCHASE));
+        model.addAttribute("forPurchaseCount", serviceRepository.countBySaleStatusAndPurchaseStatus(SaleStatus.NOT_FOR_SALE, PurchaseStatus.FOR_PURCHASE));
+        model.addAttribute("forSaleAndForPurchaseCount", serviceRepository.countBySaleStatusAndPurchaseStatus(SaleStatus.FOR_SALE, PurchaseStatus.FOR_PURCHASE));
         model.addAttribute("services", serviceRepository.findAll());
         return "services/serviceList";
     }

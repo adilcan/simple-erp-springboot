@@ -3,40 +3,50 @@
 
 </head>
 <body>
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>reference</th>
-                <th>label</th>
-                <th>saleStatus</th>
-                <th>purchaseStatus</th>
-                <th>description</th>
-                <th>publicUrl</th>
-                <th>durationValue</th>
-                <th>note</th>
-                <th>tags</th>
-                <th>salePrice</th>
-                <th>thelowestSalePrice</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="service:${services}" th:object="${service}">
-                <td th:text=*{reference}"></td>
-                <td th:text="*{label}"></td>
-                <td th:text="*{saleStatus}"></td>
-                <td th:text=*"purchaseStatus}"></td>
-                <td th:text="*{description}"></td>
-                <td th:text="*{publicUrl}"></td>
-                <td th:text="*{durationValue}"></td>
-                <td th:text="*{note}"></td>
-                <td th:text="*{tags}"></td>
-                <td th:text="*{salePrice}"></td>
-                <td th:text="*{thelowestSalePrice}"></td>
-            </tr>
 
-        </tbody>
-    </table>
+<div>
+  <table>
+    <thead>
+     <tr>
+       <th>Services not for sale and not for purchase</th>
+       <th>Services for sale only</th>
+       <th>Services for purchase only</th>
+       <th>Services for sale and for purchase</th>
+     </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th th:text="${notSaleAndNotPurchaseCount}"></th>
+        <th th:text="${forSaleCount}"></th>
+        <th th:text="${forPurchaseCount}"></th>
+        <th th:text="${forSaleAndForPurchaseCount}"></th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <table>
+    <thead>
+    <tr>
+      <th>Reference</th>
+      <th>Label</th>
+      <th>Sale Status</th>
+      <th>Purchase Status</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="service:${services}" th:object="${service}">
+      <td th:text="*{reference}"></td>
+      <td th:text="*{label}"></td>
+      <td th:text="*{saleStatus}"></td>
+      <td th:text="*{purchaseStatus}"></td>
+      <td th:text="*{description}"></td>
+    </tr>
+
+    </tbody>
+  </table>
 </div>
 </body>
 </html>
