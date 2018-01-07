@@ -2,6 +2,7 @@ package com.gitlab.adilcan.erp.controller;
 
 import com.gitlab.adilcan.erp.domain.Service;
 import com.gitlab.adilcan.erp.repository.ServiceRepository;
+import com.gitlab.adilcan.erp.repository.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,9 @@ public class ServiceController {
     @Autowired
     private ServiceRepository serviceRepository;
 
+    @Autowired
+    private TagRepository tagRepository;
+
     @GetMapping("")
     public String getServiceList(Model model){
         model.addAttribute("services", serviceRepository.findAll());
@@ -24,6 +28,7 @@ public class ServiceController {
     @GetMapping("/new")
     public String getNewService(Model model){
         model.addAttribute("service", new Service());
+        model.addAttribute("tags", tagRepository.findAll());
         return "services/newService";
     }
 

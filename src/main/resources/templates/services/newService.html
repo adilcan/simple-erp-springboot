@@ -97,7 +97,14 @@
     <br>
 
     <label for="tags">Tags/categories</label>
-    <input type="text" id="tags"/>
+    <select id="tags" th:field="*{tags}" multiple>
+      <option value="">Tags</option>
+      <option
+          th:each="taxType : ${tags}"
+          th:value="${taxType}"
+          th:text="${taxType}">
+      </option>
+    </select>
 
     <br>
 
