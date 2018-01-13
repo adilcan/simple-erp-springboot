@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <form method="post" th:action="@{/contracts/new}" th:object="${contract}">
+
+        <label for="reference">Ref.</label>
+        <input type="text" id="reference" th:field="*{reference}"/>
+
+        <label for="customer">Ref. Customer</label>
+        <input type="text" id="customer" th:field="*{customer}"/>
+
+        <label for="supplier">Ref. Supplier</label>
+        <input type="text" id="supplier" th:field="*{supplier}"/>
+
+        <label for="thirdParty">Third Party</label>
+        <input type="text" id="thirdParty" th:field="*{thirdParty}"/>
+
+        <label for="followingUpContract">RefSales representative following-up contract</label>
+        <input type="text" id="followingUpContract" th:field="*{followingUpContract}"/>
+
+        <label for="signingContract">Sales representative signing contract</label>
+        <input type="text" id="signingContract" th:field="*{signingContract}"/>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" th:field="*{date}"/>
+
+        <label for="publicNote">Note (public)</label>
+        <input type="text" id="publicNote" th:field="*{publicNote}"/>
+
+        <label for="privateNote">Note (private)</label>
+        <input type="text" id="privateNote" th:field="*{privateNote}"/>
+    </form>
+</div>
+</body>
+</html>

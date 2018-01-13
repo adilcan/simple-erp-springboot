@@ -1,7 +1,7 @@
-package com.gitlab.adilcan.erp.controller;
+package com.gitlab.adilcan.erp.service_product;
 
-import com.gitlab.adilcan.erp.domain.Tag;
-import com.gitlab.adilcan.erp.repository.TagRepository;
+import com.gitlab.adilcan.erp.service_product.Tag;
+import com.gitlab.adilcan.erp.service_product.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

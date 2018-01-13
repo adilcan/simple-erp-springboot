@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <form method="post" th:action="@{/suppliers/new}" th:object="${supplier}">
+
+        <label for="supplierReference">Ref. supplier</label>
+        <input type="text" id="supplierReference" th:field="*{supplierReference}"/>
+
+        <label for="plannedDeliveryDate">Planned date of delivery</label>
+        <input type="date" id="plannedDeliveryDate" th:field="*{plannedDeliveryDate}"/>
+
+    </form>
+</div>
+</body>
+</html>

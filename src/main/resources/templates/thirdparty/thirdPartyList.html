@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Third Party Reference</th>
+                <th>Payment Terms</th>
+                <th>Third Party Reference</th>
+                <th>Payment Types</th>
+                <th>Public Note</th>
+                <th>Private Note</th>
+                <th>Currency</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="thirdParty:${thirdParties}" th:object="${thirdParty}">
+                <td th:text="*{reference}"></td>
+                <td th:text="*{paymentTerms}"></td>
+                <td th:text="*{paymentTypes}"></td>
+                <td th:text="*{publicNote}"></td>
+                <td th:text="*{privateNoteprivateNote}"></td>
+                <td th:text="*{currency}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

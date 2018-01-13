@@ -1,0 +1,141 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <form method="post" th:action="@{/orders/news}" th:object="${order}">
+
+        <label for="reference">Ref.</label>
+        <input type="text" id="reference" th:field="*{reference}"/>
+
+        <br>
+
+        <label for="customerReference">Ref. customer</label>
+        <input type="text" id="customerReference" th:field="*{customerReference}"/>
+
+        <br>
+
+        <label for="customer">Customer</label>
+        <input type="text" id="customer" th:field="*{customer}"/>
+
+        <br>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" th:field="*{date}"/>
+
+        <br>
+
+        <label for="plannedDateDelivery">Planned date of delivery</label>
+        <input type="date" id="plannedDateDelivery" th:field="*{plannedDateDelivery}"/>
+
+        <br>
+
+        <label for="paymentTerms">Payment type</label>
+        <select id="paymentTerms" th:field="*{paymentTerms}">
+            <option value=""></option>
+            <option
+                    th:each="paymentTerms :${T(com.gitlab.adilcan.erp.domain.PaymentTerms).values()}"
+                    th:value="${paymentTerms}"
+                    th:text="${paymentTerms}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="paymentTypes">Payment type</label>
+        <select id="paymentTypes" th:field="*{paymentTypes}">
+            <option value=""></option>
+            <option
+                    th:each="paymentTypes :${T(com.gitlab.adilcan.erp.domain.PaymentTypes).values()}"
+                    th:value="${paymentTypes}"
+                    th:text="${paymentTypes}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="availabilityDelay">Availability delay</label>
+        <select id="availabilityDelay" th:field="*{availabilityDelay}">
+            <option value=""></option>
+            <option
+                    th:each="availabilityDelay :${T(com.gitlab.adilcan.erp.domain.AvailabilityDelay).values()}"
+                    th:value="${availabilityDelay}"
+                    th:text="${availabilityDelay}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="shippingMethod">Shipping method</label>
+        <select id="shippingMethod" th:field="*{source}">
+            <option value=""></option>
+            <option
+                    th:each="shippingMethod :${T(com.gitlab.adilcan.erp.domain.ShippingMethod).values()}"
+                    th:value="${shippingMethod}"
+                    th:text="${shippingMethod}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="source">Source</label>
+        <select id="source" th:field="*{source}">
+            <option value=""></option>
+            <option
+                    th:each="source :${T(com.gitlab.adilcan.erp.domain.Source).values()}"
+                    th:value="${source}"
+                    th:text="${source}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="incoTerms">Incoterms</label>
+        <select id="incoTerms" th:field="*{incoTerms}">
+            <option value=""></option>
+            <option
+                    th:each="incoTerms :${T(com.gitlab.adilcan.erp.domain.IncoTerms).values()}"
+                    th:value="${incoTerms}"
+                    th:text="${incoTerms}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="defaultDocTemplate">Default doc template</label>
+        <select id="defaultDocTemplate" th:field="*{defaultDocTemplate}">
+            <option value=""></option>
+            <option
+                    th:each="defaultDocTemplate :${T(com.gitlab.adilcan.erp.domain.DefaultDocTemplate).values()}"
+                    th:value="${defaultDocTemplate}"
+                    th:text="${defaultDocTemplate}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="currency">Default doc template</label>
+        <select id="currency" th:field="*{currency}">
+            <option value=""></option>
+            <option
+                    th:each="currency :${T(com.gitlab.adilcan.erp.domain.Currency).values()}"
+                    th:value="${currency}"
+                    th:text="${currency}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="publicNote">Note (public)</label>
+        <input type="text" id="publicNote" th:field="*{publicNote}"/>
+
+        <br>
+
+        <label for="privateNote">Note (private)</label>
+        <input type="text" id="privateNote" th:field="*{privateNote}"/>
+
+    </form>
+</div>
+</body>
+</html>

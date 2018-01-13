@@ -1,5 +1,7 @@
-package com.gitlab.adilcan.erp.domain;
+package com.gitlab.adilcan.erp.service_product;
 
+import com.gitlab.adilcan.erp.domain.BaseEntity;
+import com.gitlab.adilcan.erp.service_product.enumeration.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

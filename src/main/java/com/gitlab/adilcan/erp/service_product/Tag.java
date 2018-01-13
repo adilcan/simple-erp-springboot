@@ -1,5 +1,6 @@
-package com.gitlab.adilcan.erp.domain;
+package com.gitlab.adilcan.erp.service_product;
 
+import com.gitlab.adilcan.erp.domain.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,7 +9,6 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import java.util.List;
 
 /**

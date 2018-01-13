@@ -1,8 +1,7 @@
-package com.gitlab.adilcan.erp.repository;
+package com.gitlab.adilcan.erp.service_product;
 
-import com.gitlab.adilcan.erp.domain.PurchaseStatus;
-import com.gitlab.adilcan.erp.domain.SaleStatus;
-import com.gitlab.adilcan.erp.domain.Service;
+import com.gitlab.adilcan.erp.service_product.enumeration.PurchaseStatus;
+import com.gitlab.adilcan.erp.service_product.enumeration.SaleStatus;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
