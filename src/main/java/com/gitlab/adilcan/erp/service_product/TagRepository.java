@@ -1,6 +1,5 @@
-package com.gitlab.adilcan.erp.repository;
+package com.gitlab.adilcan.erp.service_product;
 
-import com.gitlab.adilcan.erp.domain.Tag;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

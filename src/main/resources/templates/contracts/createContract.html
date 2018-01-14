@@ -1,0 +1,77 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <form method="post" th:action="@{/contracts/new}" th:object="${contract}">
+
+        <br>
+        <label for="reference">Ref.</label>
+        <input type="text" id="reference" th:field="*{reference}"/>
+
+        <br>
+        <label for="customer">Customer</label>
+        <select id="customer" th:field="*{customer}">
+            <option value=""></option>
+            <option
+                    th:each="customer : ${customers}"
+                    th:value="${customer.id}"
+                    th:text="${customer.customerReference}">
+            </option>
+        </select>
+        <br>
+        <label for="supplier">Supplier</label>
+        <select id="supplier" th:field="*{supplier}">
+            <option value=""></option>
+            <option
+                    th:each="supplier : ${suppliers}"
+                    th:value="${supplier.id}"
+                    th:text="${supplier.supplierReference}">
+            </option>
+        </select>
+        <br>
+        <label for="thirdParties">Third Parties</label>
+        <select id="thirdParties" th:field="*{thirdParty}">
+            <option value=""></option>
+            <option
+                    th:each="thirdParty : ${thirdParties}"
+                    th:value="${thirdParty.id}"
+                    th:text="${thirdParty.reference}">
+            </option>
+        </select>
+        <br>
+        <label for="followingUpContract">RefSales representative following-up contract</label>
+        <select id="followingUpContract" th:field="*{followingUpContract}">
+            <option value=""></option>
+            <option
+                    th:each="contract : ${contracts}"
+                    th:value="${contract.id}"
+                    th:text="${contract.reference}">
+            </option>
+        </select>
+        <br>
+        <label for="signingContract">Sales representative signing contract</label>
+        <select id="signingContract" th:field="*{signingContract}">
+            <option value=""></option>
+            <option
+                    th:each="contract : ${contracts}"
+                    th:value="${contract.id}"
+                    th:text="${contract.reference}">
+            </option>
+        </select>
+
+        <br>
+        <label for="date">Date</label>
+        <input type="date" id="date" th:field="*{date}"/>
+        <br>
+        <label for="publicNote">Note (public)</label>
+        <input type="text" id="publicNote" th:field="*{publicNote}"/>
+        <br>
+        <label for="privateNote">Note (private)</label>
+        <input type="text" id="privateNote" th:field="*{privateNote}"/>
+        <button type="submit">Create</button>
+    </form>
+</div>
+</body>
+</html>

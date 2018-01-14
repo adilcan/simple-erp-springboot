@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Ref. customer</th>
+                <th>Date</th>
+                <th>Planned date of delivery</th>
+            </tr>
+        </thead>
+        <tbody>
+               <tr th:each="customer:${customers}" th:object="${customer}">
+                   <td th:text="*{customerReference}"></td>
+                   <td th:text="*{date}"></td>
+                    <td th:text="*{deliveryDate}"></td>
+               </tr>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

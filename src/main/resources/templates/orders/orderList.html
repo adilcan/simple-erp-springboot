@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Ref.</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Planned date of delivery</th>
+                <th>Payment terms</th>
+                <th>Payment type</th>
+                <th>Availability delay</th>
+                <th>Shipping method</th>
+                <th>Source</th>
+                <th>Incoterms</th>
+                <th>Default doc template</th>
+                <th>Currency</th>
+                <th>Note (public)</th>
+                <th>Note (private)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="order:${orders}" th:object="${order}">
+                <td th:text="*{reference}"></td>
+                <td th:if="${order.customer != null}" th:text="*{customer.customerReference}"></td>
+                <td th:if="${order.customer == null}">REF</td>
+                <td th:date="*{date}"></td>
+                <td th:date="*{plannedDateDelivery}"></td>
+                <td th:text="*{paymentTerms}"></td>
+                <td th:text="*{paymentTypes}"></td>
+                <td th:text="*{availabilityDelay}"></td>
+                <td th:text="*{shippingMethod}"></td>
+                <td th:text="*{source}"></td>
+                <td th:text="*{incoTerms}"></td>
+                <td th:text="*{defaultDocTemplate}"></td>
+                <td th:text="*{currency}"></td>
+                <td th:text="*{publicNote}"></td>
+                <td th:text="*{privateNote}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+          <tr>
+            <th>reference</th>
+            <th>customer</th>
+            <th>supplier</th>
+            <th>thirdParty</th>
+            <th>followingUpContract</th>
+            <th>signingContract</th>
+            <th>date</th>
+            <th>publicNote</th>
+            <th>privateNote</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr th:each="contract:${contracts}" th:object="${contract}">
+                <td th:text="*{reference}"></td>
+                <td th:text="*{customer}"></td>
+                <td th:text="*{supplier}"></td>
+                <td th:text="*{thirdParty}"></td>
+                <td th:text="*{followingUpContract}"></td>
+                <td th:text="*{signingContract}"></td>
+                <td th:text="*{date}"></td>
+                <td th:text="*{publicNote}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

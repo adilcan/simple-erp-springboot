@@ -1,4 +1,4 @@
-package com.gitlab.adilcan.erp.domain;
+package com.gitlab.adilcan.erp.service_product.enumeration;
 
 /**
  * Created on January, 2018

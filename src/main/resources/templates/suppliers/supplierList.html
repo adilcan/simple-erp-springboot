@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Ref.</th>
+            <th>Planned date of delivery</th>
+            <th>Currency</th>
+            <th>Payment Types</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="supplier:${suppliers}" th:object="${supplier}">
+            <td th:text="*{supplierReference}"></td>
+            <td th:date="*{plannedDeliveryDate}"></td>
+            <td th:text="*{currency}"></td>
+            <td th:text="*{paymentTypes}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

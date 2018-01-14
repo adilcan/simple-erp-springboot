@@ -1,10 +1,10 @@
-package com.gitlab.adilcan.erp.controller;
+package com.gitlab.adilcan.erp.service_product;
 
-import com.gitlab.adilcan.erp.domain.PurchaseStatus;
-import com.gitlab.adilcan.erp.domain.SaleStatus;
-import com.gitlab.adilcan.erp.domain.Service;
-import com.gitlab.adilcan.erp.repository.ServiceRepository;
-import com.gitlab.adilcan.erp.repository.TagRepository;
+import com.gitlab.adilcan.erp.service_product.enumeration.PurchaseStatus;
+import com.gitlab.adilcan.erp.service_product.enumeration.SaleStatus;
+import com.gitlab.adilcan.erp.service_product.Service;
+import com.gitlab.adilcan.erp.service_product.ServiceRepository;
+import com.gitlab.adilcan.erp.service_product.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
