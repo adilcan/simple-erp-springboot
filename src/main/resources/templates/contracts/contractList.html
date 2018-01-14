@@ -1,21 +1,25 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="layout">
+<th:block layout:fragment="content">
 <head>
 
 </head>
 <body>
 <div>
-    <table>
+  <a th:href="@{/contracts/new}" class="btn btn-primary" type="submit">Create Contract</a>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered">
         <thead>
           <tr>
-            <th>reference</th>
-            <th>customer</th>
-            <th>supplier</th>
-            <th>thirdParty</th>
-            <th>followingUpContract</th>
-            <th>signingContract</th>
-            <th>date</th>
-            <th>publicNote</th>
-            <th>privateNote</th>
+            <th>Refence</th>
+            <th>Customer</th>
+            <th>Supplier</th>
+            <th>Third Party</th>
+            <th>Following Up Contract</th>
+            <th>Signing Contract</th>
+            <th>Date</th>
+            <th>Public Note</th>
+            <th>Private Note</th>
           </tr>
         </thead>
         <tbody>
@@ -35,4 +39,5 @@
 
 
 </body>
+</th:block>
 </html>
