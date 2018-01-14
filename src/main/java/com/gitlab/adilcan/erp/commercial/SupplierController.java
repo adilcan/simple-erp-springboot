@@ -16,13 +16,13 @@ public class SupplierController {
         @GetMapping("")
         public String getSupplierList(Model model){
             model.addAttribute("suppliers", supplierRepository.findAll());
-            return "supplier/supplierList";
+            return "suppliers/supplierList";
         }
 
         @GetMapping("/new")
         public String getNewSupplier(Model model){
             model.addAttribute("supplier", new Supplier());
-            return "supplier/createSupplier";
+            return "suppliers/createSupplier";
         }
 
         @PostMapping("/new")
@@ -34,13 +34,13 @@ public class SupplierController {
         @GetMapping("/{id}")
         public String showSupplierList(@PathVariable Long id, Model model){
             model.addAttribute("supplier", supplierRepository.findById(id).get());
-            return "supplier/showSupplier";
+            return "suppliers/showSupplier";
         }
 
         @GetMapping("/{id}/update")
         public String getUpdateSupplier(@PathVariable Long id, Model model){
             model.addAttribute("supplier", supplierRepository.findById(id).get());
-            return "supplier/updateSupplier";
+            return "suppliers/updateSupplier";
         }
 
         @PostMapping("/{id}/update")

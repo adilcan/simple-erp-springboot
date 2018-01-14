@@ -6,10 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
 
 @Getter
@@ -30,10 +29,14 @@ public class Contract extends BaseEntity {
     @ManyToOne
     private ThirdParty thirdParty;
 
+    @OneToOne
     private Contract followingUpContract;
 
+    @OneToOne
     private Contract signingContract;
 
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
     @Lob

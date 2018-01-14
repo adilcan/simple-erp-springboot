@@ -6,12 +6,66 @@
 <div>
     <form method="post" th:action="@{/suppliers/new}" th:object="${supplier}">
 
+        <label for="reference">Ref.</label>
+        <input type="text" id="reference" th:field="*{reference}"/>
+
+        <br>
+
         <label for="supplierReference">Ref. supplier</label>
         <input type="text" id="supplierReference" th:field="*{supplierReference}"/>
+
+        <br>
+
+        <label for="paymentTerms">Payment Terms</label>
+        <select id="paymentTerms" th:field="*{paymentTerms}">
+            <option value=""></option>
+            <option
+                    th:each="paymentTerms :${T(com.gitlab.adilcan.erp.commercial.enumeration.PaymentTerms).values()}"
+                    th:value="${paymentTerms}"
+                    th:text="${paymentTerms}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="paymentTypes">Payment type</label>
+        <select id="paymentTypes" th:field="*{paymentTypes}">
+            <option value=""></option>
+            <option
+                    th:each="paymentTypes :${T(com.gitlab.adilcan.erp.commercial.enumeration.PaymentTypes).values()}"
+                    th:value="${paymentTypes}"
+                    th:text="${paymentTypes}">
+            </option>
+        </select>
+
+        <br>
 
         <label for="plannedDeliveryDate">Planned date of delivery</label>
         <input type="date" id="plannedDeliveryDate" th:field="*{plannedDeliveryDate}"/>
 
+        <br>
+
+        <label for="publicNote">Public Note</label>
+        <input type="text" id="publicNote" th:field="*{publicNote}"/>
+
+        <br>
+
+        <label for="privateNote">Private Note</label>
+        <input type="text" id="privateNote" th:field="*{privateNote}"/>
+
+        <br>
+
+        <label for="currency">Currency</label>
+        <select id="currency" th:field="*{currency}">
+            <option value=""></option>
+            <option
+                    th:each="currency : ${T(com.gitlab.adilcan.erp.commercial.enumeration.Currency).values()}"
+                    th:value="${currency}"
+                    th:text="${currency}">
+            </option>
+        </select>
+
+        <button type="submit">Create</button>
     </form>
 </div>
 </body>

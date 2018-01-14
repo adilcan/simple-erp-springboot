@@ -1,9 +1,11 @@
 package com.gitlab.adilcan.erp.commercial;
 
+import com.gitlab.adilcan.erp.domain.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import javax.persistence.Entity;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;

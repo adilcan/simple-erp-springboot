@@ -16,7 +16,7 @@ public class OrderController {
     @GetMapping("")
     public String getOrderList(Model model){
         model.addAttribute("orders", orderRepository.findAll());
-        return "order/orderList";
+        return "orders/orderList";
     }
 
     @GetMapping("/new")

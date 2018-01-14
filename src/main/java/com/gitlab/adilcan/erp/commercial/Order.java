@@ -2,6 +2,7 @@ package com.gitlab.adilcan.erp.commercial;
 
 import com.gitlab.adilcan.erp.commercial.enumeration.*;
 import com.gitlab.adilcan.erp.domain.BaseEntity;
+import javax.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,11 +17,10 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "order_table")
 public class Order extends BaseEntity{
 
     private String reference;
-
-    private String customerReference;
 
     @ManyToOne
     private Customer customer;

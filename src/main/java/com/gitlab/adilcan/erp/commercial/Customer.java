@@ -1,17 +1,16 @@
 package com.gitlab.adilcan.erp.commercial;
 
 import com.gitlab.adilcan.erp.commercial.enumeration.*;
+import com.gitlab.adilcan.erp.domain.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.Lob;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -41,6 +40,11 @@ public class Customer extends ThirdParty{
 
     private DefaultDocTemplate defaultDocTemplate;
 
+    @OneToMany(mappedBy = "customer")
+    private List<Contract> contracts;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Order> orders;
 
 }
 

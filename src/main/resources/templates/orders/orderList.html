@@ -8,7 +8,6 @@
         <thead>
             <tr>
                 <th>Ref.</th>
-                <th>Ref. customer</th>
                 <th>Customer</th>
                 <th>Date</th>
                 <th>Planned date of delivery</th>
@@ -27,14 +26,15 @@
         <tbody>
             <tr th:each="order:${orders}" th:object="${order}">
                 <td th:text="*{reference}"></td>
-                <td th:text="*{customerReference}"></td>
-                <td th:text="*{customer}"></td>
+                <td th:if="${order.customer != null}" th:text="*{customer.customerReference}"></td>
+                <td th:if="${order.customer == null}">REF</td>
                 <td th:date="*{date}"></td>
                 <td th:date="*{plannedDateDelivery}"></td>
                 <td th:text="*{paymentTerms}"></td>
                 <td th:text="*{paymentTypes}"></td>
+                <td th:text="*{availabilityDelay}"></td>
+                <td th:text="*{shippingMethod}"></td>
                 <td th:text="*{source}"></td>
-                <td th:text="*{defaultDocTemplate}"></td>
                 <td th:text="*{incoTerms}"></td>
                 <td th:text="*{defaultDocTemplate}"></td>
                 <td th:text="*{currency}"></td>

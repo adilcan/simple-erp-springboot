@@ -4,15 +4,10 @@
 </head>
 <body>
 <div>
-    <form method="post" th:action="@{/orders/news}" th:object="${order}">
+    <form method="post" th:action="@{/orders/new}" th:object="${order}">
 
         <label for="reference">Ref.</label>
         <input type="text" id="reference" th:field="*{reference}"/>
-
-        <br>
-
-        <label for="customerReference">Ref. customer</label>
-        <input type="text" id="customerReference" th:field="*{customerReference}"/>
 
         <br>
 
@@ -31,11 +26,11 @@
 
         <br>
 
-        <label for="paymentTerms">Payment type</label>
+        <label for="paymentTerms">Payment Terms</label>
         <select id="paymentTerms" th:field="*{paymentTerms}">
             <option value=""></option>
             <option
-                    th:each="paymentTerms :${T(com.gitlab.adilcan.erp.domain.PaymentTerms).values()}"
+                    th:each="paymentTerms :${T(com.gitlab.adilcan.erp.commercial.enumeration.PaymentTerms).values()}"
                     th:value="${paymentTerms}"
                     th:text="${paymentTerms}">
             </option>
@@ -47,7 +42,7 @@
         <select id="paymentTypes" th:field="*{paymentTypes}">
             <option value=""></option>
             <option
-                    th:each="paymentTypes :${T(com.gitlab.adilcan.erp.domain.PaymentTypes).values()}"
+                    th:each="paymentTypes :${T(com.gitlab.adilcan.erp.commercial.enumeration.PaymentTypes).values()}"
                     th:value="${paymentTypes}"
                     th:text="${paymentTypes}">
             </option>
@@ -59,7 +54,7 @@
         <select id="availabilityDelay" th:field="*{availabilityDelay}">
             <option value=""></option>
             <option
-                    th:each="availabilityDelay :${T(com.gitlab.adilcan.erp.domain.AvailabilityDelay).values()}"
+                    th:each="availabilityDelay :${T(com.gitlab.adilcan.erp.commercial.enumeration.AvailabilityDelay).values()}"
                     th:value="${availabilityDelay}"
                     th:text="${availabilityDelay}">
             </option>
@@ -71,7 +66,7 @@
         <select id="shippingMethod" th:field="*{source}">
             <option value=""></option>
             <option
-                    th:each="shippingMethod :${T(com.gitlab.adilcan.erp.domain.ShippingMethod).values()}"
+                    th:each="shippingMethod :${T(com.gitlab.adilcan.erp.commercial.enumeration.ShippingMethod).values()}"
                     th:value="${shippingMethod}"
                     th:text="${shippingMethod}">
             </option>
@@ -83,7 +78,7 @@
         <select id="source" th:field="*{source}">
             <option value=""></option>
             <option
-                    th:each="source :${T(com.gitlab.adilcan.erp.domain.Source).values()}"
+                    th:each="source :${T(com.gitlab.adilcan.erp.commercial.enumeration.Source).values()}"
                     th:value="${source}"
                     th:text="${source}">
             </option>
@@ -95,7 +90,7 @@
         <select id="incoTerms" th:field="*{incoTerms}">
             <option value=""></option>
             <option
-                    th:each="incoTerms :${T(com.gitlab.adilcan.erp.domain.IncoTerms).values()}"
+                    th:each="incoTerms :${T(com.gitlab.adilcan.erp.commercial.enumeration.IncoTerms).values()}"
                     th:value="${incoTerms}"
                     th:text="${incoTerms}">
             </option>
@@ -107,7 +102,7 @@
         <select id="defaultDocTemplate" th:field="*{defaultDocTemplate}">
             <option value=""></option>
             <option
-                    th:each="defaultDocTemplate :${T(com.gitlab.adilcan.erp.domain.DefaultDocTemplate).values()}"
+                    th:each="defaultDocTemplate :${T(com.gitlab.adilcan.erp.commercial.enumeration.DefaultDocTemplate).values()}"
                     th:value="${defaultDocTemplate}"
                     th:text="${defaultDocTemplate}">
             </option>
@@ -119,7 +114,7 @@
         <select id="currency" th:field="*{currency}">
             <option value=""></option>
             <option
-                    th:each="currency :${T(com.gitlab.adilcan.erp.domain.Currency).values()}"
+                    th:each="currency :${T(com.gitlab.adilcan.erp.commercial.enumeration.Currency).values()}"
                     th:value="${currency}"
                     th:text="${currency}">
             </option>
@@ -135,6 +130,7 @@
         <label for="privateNote">Note (private)</label>
         <input type="text" id="privateNote" th:field="*{privateNote}"/>
 
+        <button type="submit">Create</button>
     </form>
 </div>
 </body>

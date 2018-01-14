@@ -11,6 +11,8 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Getter
 @Setter
@@ -32,5 +34,8 @@ public class ThirdParty extends BaseEntity {
     private String privateNote;
 
     private Currency currency;
+
+    @OneToMany(mappedBy = "thirdParty")
+    private List<Contract> contracts;
 
 }
