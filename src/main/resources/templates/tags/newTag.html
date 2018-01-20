@@ -6,16 +6,22 @@
 <div>
     <form method="post" th:acton="@{tags/new}" th:object="${tag}">
 
+        <div class="form-group">
         <label for="reference">Ref.</label>
         <input type="text" id="reference" th:field="*{reference}"/>
+        </div>
 
+        <div class="form-group">
         <label for="description">Description</label>
         <input type="text" id="description" th:field="*{description}"/>
+        </div>
 
+        <div class="form-group">
         <label for="color">Color</label>
         <input type="text" id="color" th:field="*{color}"/>
+        </div>
 
-        <button type="submit">Create</button>
+        <button class="btn btn-primary" type="submit">Create</button>
     </form>
 </div>
 </body>

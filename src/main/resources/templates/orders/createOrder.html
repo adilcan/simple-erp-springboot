@@ -5,26 +5,27 @@
 <div>
     <form method="post" th:action="@{/orders/new}" th:object="${order}">
 
+        <div class="form-group">
         <label for="reference">Ref.</label>
         <input type="text" id="reference" th:field="*{reference}"/>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="customer">Customer</label>
         <input type="text" id="customer" th:field="*{customer}"/>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="date">Date</label>
         <input type="date" id="date" th:field="*{date}"/>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="plannedDateDelivery">Planned date of delivery</label>
         <input type="date" id="plannedDateDelivery" th:field="*{plannedDateDelivery}"/>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="paymentTerms">Payment Terms</label>
         <select id="paymentTerms" th:field="*{paymentTerms}">
             <option value=""></option>
@@ -34,9 +35,9 @@
                     th:text="${paymentTerms}">
             </option>
         </select>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="paymentTypes">Payment type</label>
         <select id="paymentTypes" th:field="*{paymentTypes}">
             <option value=""></option>
@@ -46,9 +47,9 @@
                     th:text="${paymentTypes}">
             </option>
         </select>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="availabilityDelay">Availability delay</label>
         <select id="availabilityDelay" th:field="*{availabilityDelay}">
             <option value=""></option>
@@ -58,9 +59,9 @@
                     th:text="${availabilityDelay}">
             </option>
         </select>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="shippingMethod">Shipping method</label>
         <select id="shippingMethod" th:field="*{source}">
             <option value=""></option>
@@ -70,9 +71,9 @@
                     th:text="${shippingMethod}">
             </option>
         </select>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="source">Source</label>
         <select id="source" th:field="*{source}">
             <option value=""></option>
@@ -82,9 +83,9 @@
                     th:text="${source}">
             </option>
         </select>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="incoTerms">Incoterms</label>
         <select id="incoTerms" th:field="*{incoTerms}">
             <option value=""></option>
@@ -94,9 +95,9 @@
                     th:text="${incoTerms}">
             </option>
         </select>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="defaultDocTemplate">Default doc template</label>
         <select id="defaultDocTemplate" th:field="*{defaultDocTemplate}">
             <option value=""></option>
@@ -106,9 +107,9 @@
                     th:text="${defaultDocTemplate}">
             </option>
         </select>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="currency">Default doc template</label>
         <select id="currency" th:field="*{currency}">
             <option value=""></option>
@@ -118,18 +119,19 @@
                     th:text="${currency}">
             </option>
         </select>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="publicNote">Note (public)</label>
         <input type="text" id="publicNote" th:field="*{publicNote}"/>
+        </div>
 
-        <br>
-
+        <div class="form-group">
         <label for="privateNote">Note (private)</label>
         <input type="text" id="privateNote" th:field="*{privateNote}"/>
+        </div>
 
-        <button type="submit">Create</button>
+        <button class="btn btn-primary" type="submit">Create</button>
     </form>
 </div>
 </body>

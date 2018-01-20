@@ -1,9 +1,11 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="layout">
 <th:block layout:fragment="content">
 <body>
-
 <div>
-  <table>
+  <a th:href="@{/services/new}" class="btn btn-primary" type="submit">Create Service</a>
+</div>
+<div class="table-responsive">
+  <table class="table table-bordered">
     <thead>
      <tr>
        <th>Services not for sale and not for purchase</th>

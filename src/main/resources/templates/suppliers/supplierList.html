@@ -3,14 +3,24 @@
 
 </head>
 <body>
-<<div>
-    <table>
+<div>
+    <a th:href="@{/contracts/new}" class="btn btn-primary" type="submit">Create Supplier</a>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered">
         <thead>
         <tr>
-            <th>Ref.</th>
+            <th>Ref. customer</th>
+            <th>Date</th>
             <th>Planned date of delivery</th>
-            <th>Currency</th>
+            <th>Payment Terms</th>
             <th>Payment Types</th>
+            <th>Availibity Delay</th>
+            <th>Source</th>
+            <th>Default Doc Template</th>
+            <th>Currency</th>
+            <th>Public Not</th>
+            <th>Private Not</th>
         </tr>
         </thead>
         <tbody>
@@ -19,6 +29,17 @@
             <td th:date="*{plannedDeliveryDate}"></td>
             <td th:text="*{currency}"></td>
             <td th:text="*{paymentTypes}"></td>
+            <td th:text="*{customerReference}"></td>
+            <td th:text="*{date}"></td>
+            <td th:text="*{deliveryDate}"></td>
+            <td th:text="*{paymentTerms}"></td>
+            <td th:text="*{paymentTypes}"></td>
+            <td th:text="*{availabilityDelay}"></td>
+            <td th:text="*{source}"></td>
+            <td th:text="*{defaultDocTemplate}"></td>
+            <td th:text="*{currency}"></td>
+            <td th:text="*{publicNote}"></td>
+            <td th:text="*{privateNote}"></td>
         </tr>
         </tbody>
     </table>

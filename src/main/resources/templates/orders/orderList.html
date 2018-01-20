@@ -2,7 +2,10 @@
 <th:block layout:fragment="content">
 <body>
 <div>
-    <table>
+    <a th:href="@{/orders/new}" class="btn btn-primary" type="submit">Create Orders</a>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Ref.</th>
