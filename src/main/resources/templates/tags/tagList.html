@@ -1,28 +1,30 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="layout">
-<th:block layout:fragment="content"><head>
+<th:block layout:fragment="content">
+  <head>
 
-</head>
-<body>
-<div>
+  </head>
+  <body>
+  <div>
     <a th:href="@{/tags/new}" class="btn btn-primary" type="submit">Create Tag</a>
-</div>
-<div class="table-responsive">
-    <table class="table table-bordered">        <thead>
-            <tr>
-                <th>reference</th>
-                <th>description</th>
-                <th>color</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="tag:${tags}" th:object="${tag}">
-                <td th:text="*{reference}"></td>
-                <td th:text="*{description}"></td>
-                <td th:text="*{color}"></td>
-            </tr>
-        </tbody>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Reference</th>
+        <th>Description</th>
+        <th>Color</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="tag:${tags}" th:object="${tag}">
+        <td th:text="*{reference}"></td>
+        <td th:text="*{description}"></td>
+        <td th:text="*{color}"></td>
+      </tr>
+      </tbody>
     </table>
-</div>
-</body>
+  </div>
+  </body>
 </th:block>
 </html>

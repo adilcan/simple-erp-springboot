@@ -1,49 +1,34 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="layout">
-<th:block layout:fragment="content"><head>
+<th:block layout:fragment="content">
+  <head>
 
-</head>
-<body>
-<div>
+  </head>
+  <body>
+  <div>
     <a th:href="@{/contracts/new}" class="btn btn-primary" type="submit">Create Supplier</a>
-</div>
-<div class="table-responsive">
+  </div>
+  <div class="table-responsive">
     <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>Ref. customer</th>
-            <th>Date</th>
-            <th>Planned date of delivery</th>
-            <th>Payment Terms</th>
-            <th>Payment Types</th>
-            <th>Availibity Delay</th>
-            <th>Source</th>
-            <th>Default Doc Template</th>
-            <th>Currency</th>
-            <th>Public Not</th>
-            <th>Private Not</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="supplier:${suppliers}" th:object="${supplier}">
-            <td th:text="*{supplierReference}"></td>
-            <td th:date="*{plannedDeliveryDate}"></td>
-            <td th:text="*{currency}"></td>
-            <td th:text="*{paymentTypes}"></td>
-            <td th:text="*{customerReference}"></td>
-            <td th:text="*{date}"></td>
-            <td th:text="*{deliveryDate}"></td>
-            <td th:text="*{paymentTerms}"></td>
-            <td th:text="*{paymentTypes}"></td>
-            <td th:text="*{availabilityDelay}"></td>
-            <td th:text="*{source}"></td>
-            <td th:text="*{defaultDocTemplate}"></td>
-            <td th:text="*{currency}"></td>
-            <td th:text="*{publicNote}"></td>
-            <td th:text="*{privateNote}"></td>
-        </tr>
-        </tbody>
+      <thead>
+      <tr>
+        <th>Ref. customer</th>
+        <th>Date</th>
+        <th>Planned date of delivery</th>
+        <th>Payment Terms</th>
+        <th>Payment Types</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="supplier:${suppliers}" th:object="${supplier}">
+        <td th:text="*{customerReference}"></td>
+        <td th:date="*{date}"></td>
+        <td th:text="*{plannedDeliveryDate}"></td>
+        <td th:text="*{paymentTerms}"></td>
+        <td th:text="*{paymentTypes}"></td>
+      </tr>
+      </tbody>
     </table>
-</div>
-</body>
+  </div>
+  </body>
 </th:block>
 </html>

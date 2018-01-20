@@ -1,53 +1,51 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="layout">
 <th:block layout:fragment="content">
-<body>
-<div>
-  <a th:href="@{/services/new}" class="btn btn-primary" type="submit">Create Service</a>
-</div>
-<div class="table-responsive">
-  <table class="table table-bordered">
-    <thead>
-     <tr>
-       <th>Services not for sale and not for purchase</th>
-       <th>Services for sale only</th>
-       <th>Services for purchase only</th>
-       <th>Services for sale and for purchase</th>
-     </tr>
-    </thead>
-    <tbody>
+  <body>
+  <div>
+    <a th:href="@{/services/new}" class="btn btn-primary" type="submit">Create Service</a>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Not for sale and not for purchase</th>
+        <th>For sale only</th>
+        <th>For purchase only</th>
+        <th>For sale and for purchase</th>
+      </tr>
+      </thead>
+      <tbody>
       <tr>
         <th th:text="${notSaleAndNotPurchaseCount}"></th>
         <th th:text="${forSaleCount}"></th>
         <th th:text="${forPurchaseCount}"></th>
         <th th:text="${forSaleAndForPurchaseCount}"></th>
       </tr>
-    </tbody>
-  </table>
-</div>
+      </tbody>
+    </table>
+  </div>
 
-<div>
-  <table>
-    <thead>
-    <tr>
-      <th>Reference</th>
-      <th>Label</th>
-      <th>Sale Status</th>
-      <th>Purchase Status</th>
-      <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="service:${services}" th:object="${service}">
-      <td th:text="*{reference}"></td>
-      <td th:text="*{label}"></td>
-      <td th:text="*{saleStatus}"></td>
-      <td th:text="*{purchaseStatus}"></td>
-      <td th:text="*{description}"></td>
-    </tr>
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <th>Reference</th>
+        <th>Label</th>
+        <th>Sale Status</th>
+        <th>Purchase Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="service:${services}" th:object="${service}">
+        <td th:text="*{reference}"></td>
+        <td th:text="*{label}"></td>
+        <td th:text="*{saleStatus}"></td>
+        <td th:text="*{purchaseStatus}"></td>
+      </tr>
 
-    </tbody>
-  </table>
-</div>
-</body>
+      </tbody>
+    </table>
+  </div>
+  </body>
 </th:block>
 </html>

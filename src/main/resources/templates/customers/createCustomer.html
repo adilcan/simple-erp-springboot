@@ -1,87 +1,84 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="layout">
 <th:block layout:fragment="content">
-<body>
-<div>
-    <form method="post" th:action="@{/customers/new}" th:object="${customer}">
 
-        <div class="form-group"></div>
-        <lable for="customerReference">Ref. customer</lable>
-        <input type="text" id="customerReference" th:field="*{customerReference}"/>
-        <div>
+      <form method="post" th:action="@{/customers/new}" th:object="${customer}">
 
         <div class="form-group">
-        <lable for="date">Date</lable>
-        <input type="date" id="date" th:field="*{date}"/>
+          <label for="customerReference">Ref. customer</label>
+          <input class="form-control" type="text" id="customerReference" th:field="*{customerReference}"/>
         </div>
 
         <div class="form-group">
-        <label for="paymentTerms">Source</label>
-        <select id="paymentTerms" th:field="*{paymentTerms}">
+          <label for="date">Date</label>
+          <input class="form-control" type="date" id="date" th:field="*{date}"/>
+        </div>
+
+        <div class="form-group">
+          <label for="paymentTerms">Source</label>
+          <select class="form-control" id="paymentTerms" th:field="*{paymentTerms}">
             <option value=""></option>
             <option
-                    th:each="paymentTerms :${T(com.gitlab.adilcan.erp.commercial.enumeration.PaymentTerms).values()}"
-                    th:value="${paymentTerms}"
-                    th:text="${paymentTerms}">
+                th:each="paymentTerms :${T(com.gitlab.adilcan.erp.commercial.enumeration.PaymentTerms).values()}"
+                th:value="${paymentTerms}"
+                th:text="${paymentTerms}">
             </option>
-        </select>
+          </select>
         </div>
 
         <div class="form-group">
-        <label for="availabilityDelay">Availability delay</label>
-        <select id="availabilityDelay" th:field="*{availabilityDelay}">
+          <label for="availabilityDelay">Availability delay</label>
+          <select class="form-control" id="availabilityDelay" th:field="*{availabilityDelay}">
             <option value=""></option>
             <option
-                    th:each="availabilityDelay :${T(com.gitlab.adilcan.erp.commercial.enumeration.AvailabilityDelay).values()}"
-                    th:value="${availabilityDelay}"
-                    th:text="${availabilityDelay}">
+                th:each="availabilityDelay :${T(com.gitlab.adilcan.erp.commercial.enumeration.AvailabilityDelay).values()}"
+                th:value="${availabilityDelay}"
+                th:text="${availabilityDelay}">
             </option>
-        </select>
+          </select>
         </div>
 
         <div class="form-group">
-        <label for="shippingMethod">Shipping method</label>
-        <select id="shippingMethod" th:field="*{shippingMethod}">
+          <label for="shippingMethod">Shipping method</label>
+          <select class="form-control" id="shippingMethod" th:field="*{shippingMethod}">
             <option value=""></option>
             <option
-                    th:each="shippingMethod :${T(com.gitlab.adilcan.erp.commercial.enumeration.ShippingMethod).values()}"
-                    th:value="${shippingMethod}"
-                    th:text="${shippingMethod}">
+                th:each="shippingMethod :${T(com.gitlab.adilcan.erp.commercial.enumeration.ShippingMethod).values()}"
+                th:value="${shippingMethod}"
+                th:text="${shippingMethod}">
             </option>
-        </select>
+          </select>
         </div>
 
         <div class="form-group">
-        <label for="deliveryDate">Delivery Date</label>
-        <input type="date" id="deliveryDate" th:field="*{deliveryDate}"/>
+          <label for="deliveryDate">Delivery Date</label>
+          <input class="form-control" type="date" id="deliveryDate" th:field="*{deliveryDate}"/>
         </div>
 
         <div class="form-group">
-        <label for="incoTerms">Incoterms</label>
-        <select id="incoTerms" th:field="*{incoTerms}">
+          <label for="incoTerms">Incoterms</label>
+          <select class="form-control" id="incoTerms" th:field="*{incoTerms}">
             <option value=""></option>
             <option
-                    th:each="incoTerms :${T(com.gitlab.adilcan.erp.commercial.enumeration.IncoTerms).values()}"
-                    th:value="${incoTerms}"
-                    th:text="${incoTerms}">
+                th:each="incoTerms :${T(com.gitlab.adilcan.erp.commercial.enumeration.IncoTerms).values()}"
+                th:value="${incoTerms}"
+                th:text="${incoTerms}">
             </option>
-        </select>
+          </select>
         </div>
 
         <div class="form-group">
-        <label for="defaultDocTemplate">Default Doc Template</label>
-        <select id="defaultDocTemplate" th:field="*{defaultDocTemplate}">
+          <label for="defaultDocTemplate">Default Doc Template</label>
+          <select class="form-control" id="defaultDocTemplate" th:field="*{defaultDocTemplate}">
             <option value=""></option>
             <option
-                    th:each="defaultDocTemplate :${T(com.gitlab.adilcan.erp.commercial.enumeration.DefaultDocTemplate).values()}"
-                    th:value="${defaultDocTemplate}"
-                    th:text="${defaultDocTemplate}">
+                th:each="defaultDocTemplate :${T(com.gitlab.adilcan.erp.commercial.enumeration.DefaultDocTemplate).values()}"
+                th:value="${defaultDocTemplate}"
+                th:text="${defaultDocTemplate}">
             </option>
-        </select>
+          </select>
         </div>
 
         <button class="btn btn-primary" type="submit">Create</button>
-    </form>
-</div>
-</body>
+      </form>
 </th:block>
 </html>

@@ -1,139 +1,139 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="layout">
 <th:block layout:fragment="content">
-<body>
-<div>
-  <form method="post" th:action="@{/services/new}" th:object="${service}">
+  <body>
+  <div>
+    <form method="post" th:action="@{/services/new}" th:object="${service}">
 
-    <div class="form-group">
-    <label for="reference">Ref.</label>
-    <input type="text" id="reference" th:field="*{reference}"/>
-    </div>
-
-    <div class="form-group">
-    <label for="label">Label</label>
-    <input type="text" id="label" th:field="*{label}"/>
-    </div>
-
-    <div class="form-group">
-    <label for="saleStatus">Status (Sales)</label>
-    <select id="saleStatus" th:field="*{saleStatus}">
-      <option value="">Sale Status</option>
-      <option
-          th:each="saleStatus : ${T(com.gitlab.adilcan.erp.service_product.enumeration.SaleStatus).values()}"
-          th:value="${saleStatus}"
-          th:text="${saleStatus}">
-      </option>
-    </select>
-    </div>
-
-    <div class="form-group">
-    <label for="purchaseStatus">Status (Purchase)</label>
-    <select id="purchaseStatus" th:field="*{purchaseStatus}">
-      <option value="">Purchase Status</option>
-      <option
-          th:each="purchaseStatus : ${T(com.gitlab.adilcan.erp.service_product.enumeration.PurchaseStatus).values()}"
-          th:value="${purchaseStatus}"
-          th:text="${purchaseStatus}">
-      </option>
-    </select>
-    </div>
-
-    <div class="form-group">
-    <label for="description">Description</label>
-    <textarea type="text" id="description" th:field="*{description}"/>
-    </div>
-
-    <div class="form-group">
-    <label for="publicUrl">Public URL</label>
-    <input type="url" id="publicUrl" th:field="*{publicUrl}"/>
-    </div>
-
-    <div class="form-group">
-    <label for="durationValue">Duration Value</label>
-    <input type="text" id="durationValue" th:field="*{durationValue}"/>
-    </div>
-
-    <div class="form-group">
-    <label>Duration Type</label>
-    <div>
-      <div>
-        <input type="radio" th:name="durationType" th:text="*{durationType}" th:value="HOUR" th:checked="checked"/>
-        <label>Hour</label>
+      <div class="form-group">
+        <label for="reference">Ref.</label>
+        <input class="form-control" type="text" id="reference" th:field="*{reference}"/>
       </div>
-      <div>
-        <input type="radio" th:name="durationType" th:text="*{durationType}" th:value="DAY"/>
-        <label>Day</label>
+
+      <div class="form-group">
+        <label for="label">Label</label>
+        <input class="form-control" type="text" id="label" th:field="*{label}"/>
       </div>
-      <div>
-        <input type="radio" th:name="durationType" th:text="*{durationType}" th:value="WEEK"/>
-        <label>Week</label>
+
+      <div class="form-group">
+        <label for="saleStatus">Status (Sales)</label>
+        <select class="form-control" id="saleStatus" th:field="*{saleStatus}">
+          <option value="">Sale Status</option>
+          <option
+              th:each="saleStatus : ${T(com.gitlab.adilcan.erp.service_product.enumeration.SaleStatus).values()}"
+              th:value="${saleStatus}"
+              th:text="${saleStatus}">
+          </option>
+        </select>
       </div>
-      <div>
-        <input type="radio" th:name="durationType" th:text="*{durationType}" th:value="MONTH"/>
-        <label>Month</label>
+
+      <div class="form-group">
+        <label for="purchaseStatus">Status (Purchase)</label>
+        <select class="form-control" id="purchaseStatus" th:field="*{purchaseStatus}">
+          <option value="">Purchase Status</option>
+          <option
+              th:each="purchaseStatus : ${T(com.gitlab.adilcan.erp.service_product.enumeration.PurchaseStatus).values()}"
+              th:value="${purchaseStatus}"
+              th:text="${purchaseStatus}">
+          </option>
+        </select>
       </div>
-      <div>
-        <input type="radio" th:name="durationType" th:text="*{durationType}" th:value="YEAR"/>
-        <label>Year</label>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" type="text" id="description" th:field="*{description}"/>
       </div>
-    </div>
-    </div>
 
-    <div class="form-group">
-    <label for="note">Note (not visible on invoices, proposals...)</label>
-    <textarea type="text" id="note" th:field="*{note}"/>
-    </div>
+      <div class="form-group">
+        <label for="publicUrl">Public URL</label>
+        <input class="form-control" type="url" id="publicUrl" th:field="*{publicUrl}"/>
+      </div>
 
-    <div class="form-group">
-    <label for="tags">Tags/categories</label>
-    <select id="tags" th:field="*{tags}" multiple>
-      <option value="">Tags</option>
-      <option
-          th:each="taxType : ${tags}"
-          th:value="${taxType}"
-          th:text="${taxType}">
-      </option>
-    </select>
-    </div>
+      <div class="form-group">
+        <label for="durationValue">Duration Value</label>
+        <input class="form-control" type="text" id="durationValue" th:field="*{durationValue}"/>
+      </div>
 
-    <div class="form-group">
-    <label for="salePrice">Selling price</label>
-    <input type="text" id="salePrice" th:field="*{salePrice}"/>
-    </div>
+      <div class="form-group">
+        <label>Duration Type</label>
+        <div>
+          <div>
+            <input class="form-control" type="radio" th:name="durationType" th:text="*{durationType}" th:value="HOUR" th:checked="checked"/>
+            <label>Hour</label>
+          </div>
+          <div>
+            <input class="form-control" type="radio" th:name="durationType" th:text="*{durationType}" th:value="DAY"/>
+            <label>Day</label>
+          </div>
+          <div>
+            <input class="form-control" type="radio" th:name="durationType" th:text="*{durationType}" th:value="WEEK"/>
+            <label>Week</label>
+          </div>
+          <div>
+            <input class="form-control" type="radio" th:name="durationType" th:text="*{durationType}" th:value="MONTH"/>
+            <label>Month</label>
+          </div>
+          <div>
+            <input class="form-control" type="radio" th:name="durationType" th:text="*{durationType}" th:value="YEAR"/>
+            <label>Year</label>
+          </div>
+        </div>
+      </div>
 
-    <div class="form-group">
-    <label for="taxType">Tax Type</label>
-    <select id="taxType" th:field="*{taxType}">
-      <option value=""></option>
-      <option
-          th:each="taxType : ${T(com.gitlab.adilcan.erp.service_product.enumeration.TaxType).values()}"
-          th:value="${taxType}"
-          th:text="${taxType}">
-      </option>
-    </select>
-    </div>
+      <div class="form-group">
+        <label for="note">Note (not visible on invoices, proposals...)</label>
+        <textarea class="form-control" type="text" id="note" th:field="*{note}"/>
+      </div>
 
-    <div class="form-group">
-    <label for="minSalePrice">Min selling price</label>
-    <input type="text" id="minSalePrice" th:field="*{minSalePrice}"/>
-    </div>
+      <div class="form-group">
+        <label for="tags">Tags/categories</label>
+        <select class="form-control" id="tags" th:field="*{tags}" multiple>
+          <option value="">Tags</option>
+          <option
+              th:each="taxType : ${tags}"
+              th:value="${taxType}"
+              th:text="${taxType}">
+          </option>
+        </select>
+      </div>
 
-    <div class="form-group">
-    <label for="taxRate">Tax Rate</label>
-    <select id="taxRate" th:field="*{taxRate}">
-      <option value=""></option>
-      <option
-          th:each="taxRate : ${T(com.gitlab.adilcan.erp.service_product.enumeration.TaxRate).values()}"
-          th:value="${taxRate}"
-          th:text="${taxRate}">
-      </option>
-    </select>
-    </div>
+      <div class="form-group">
+        <label for="salePrice">Selling price</label>
+        <input class="form-control" type="text" id="salePrice" th:field="*{salePrice}"/>
+      </div>
 
-    <button class="btn btn-primary" type="submit">Create</button>
+      <div class="form-group">
+        <label for="taxType">Tax Type</label>
+        <select class="form-control" id="taxType" th:field="*{taxType}">
+          <option value=""></option>
+          <option
+              th:each="taxType : ${T(com.gitlab.adilcan.erp.service_product.enumeration.TaxType).values()}"
+              th:value="${taxType}"
+              th:text="${taxType}">
+          </option>
+        </select>
+      </div>
 
-  </form>
-</div>
-</body>
+      <div class="form-group">
+        <label for="minSalePrice">Min selling price</label>
+        <input class="form-control" type="text" id="minSalePrice" th:field="*{minSalePrice}"/>
+      </div>
+
+      <div class="form-group">
+        <label for="taxRate">Tax Rate</label>
+        <select class="form-control" id="taxRate" th:field="*{taxRate}">
+          <option value=""></option>
+          <option
+              th:each="taxRate : ${T(com.gitlab.adilcan.erp.service_product.enumeration.TaxRate).values()}"
+              th:value="${taxRate}"
+              th:text="${taxRate}">
+          </option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Create</button>
+
+    </form>
+  </div>
+  </body>
 </th:block>
 </html>
