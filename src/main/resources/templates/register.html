@@ -17,26 +17,34 @@
     <link th:href="@{/css/sb-admin.css}" rel="stylesheet">
   </head>
   <body>
-  <div>
-    <form method="post" th:action="@{/register}" th:object="${user}">
+  <div class="container">
+    <h2  class="text-center">Register</h2>
+    <hr>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <form method="post" th:action="@{/register}" th:object="${user}">
 
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input th:field="*{username}" class="form-control" type="text" id="username" name="username"/>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input th:field="*{username}" class="form-control" type="text" id="username" name="username"/>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input th:field="*{email}" class="form-control" type="text" id="email" name="email"/>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input th:field="*{password}" class="form-control" type="password" id="password" name="password"/>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Register</button>
+        </form>
       </div>
-
-      <div class="form-group">
-        <label for="email">E-Mail</label>
-        <input th:field="*{email}" class="form-control" type="text" id="email" name="email"/>
-      </div>
-
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input th:field="*{password}" class="form-control" type="password" id="password" name="password"/>
-      </div>
-
-      <button class="btn btn-primary" type="submit">Register</button>
-    </form>
+      <div class="col"></div>
+    </div>
   </div>
   </body>
 </th:block>

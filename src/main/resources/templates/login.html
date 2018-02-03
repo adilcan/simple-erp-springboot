@@ -17,21 +17,40 @@
     <link th:href="@{/css/sb-admin.css}" rel="stylesheet">
   </head>
   <body>
-  <div>
-    <form method="post" th:action="@{/login}">
-
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input class="form-control" type="text" id="username" name="username"/>
+  <div class="container">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <h2>Log-in to your account</h2>
+        <hr>
       </div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <form class="form-horizontal" method="post" th:action="@{/login}">
 
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input class="form-control" type="password" id="password" name="password"/>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input class="form-control" type="text" id="username" name="username"/>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="password"/>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Login</button>
+        </form>
       </div>
-
-      <button class="btn btn-primary" type="submit">Login</button>
-    </form>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
   </div>
   </body>
 </th:block>
