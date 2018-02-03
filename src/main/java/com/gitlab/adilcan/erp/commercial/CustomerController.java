@@ -40,7 +40,7 @@ public class CustomerController {
     @GetMapping("/{id}/update")
     public String getUpdateCustomer(@PathVariable Long id, Model model){
         model.addAttribute("customer", customerRepository.findById(id).get());
-        return "customer/updateCustomer";
+        return "customers/updateCustomer";
     }
 
     @PostMapping("/{id}/update")

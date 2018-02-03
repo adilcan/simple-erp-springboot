@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Simple ERP Application</title>
+    <!-- Bootstrap core CSS-->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet">
+    <!-- Page level plugin CSS-->
+    <link th:href="@{/css/dataTables.bootstrap4.css}" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link th:href="@{/css/sb-admin.css}" rel="stylesheet">
+  </head>
+  <body>
+  <div>
+    <form method="post" th:action="@{/register}" th:object="${user}">
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input th:field="*{username}" class="form-control" type="text" id="username" name="username"/>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input th:field="*{email}" class="form-control" type="text" id="email" name="email"/>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input th:field="*{password}" class="form-control" type="password" id="password" name="password"/>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+  </div>
+  </body>
+</th:block>
+</html>
