@@ -14,4 +14,6 @@ public interface ServiceRepository extends CrudRepository<Service, Long>{
 
 	int countBySaleStatusAndPurchaseStatus(SaleStatus saleStatus, PurchaseStatus purchaseStatus);
 
+	List<Service> findBySaleStatus(SaleStatus saleStatus);
+
 }

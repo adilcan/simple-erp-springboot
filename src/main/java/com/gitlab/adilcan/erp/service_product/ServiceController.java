@@ -2,9 +2,6 @@ package com.gitlab.adilcan.erp.service_product;
 
 import com.gitlab.adilcan.erp.service_product.enumeration.PurchaseStatus;
 import com.gitlab.adilcan.erp.service_product.enumeration.SaleStatus;
-import com.gitlab.adilcan.erp.service_product.Service;
-import com.gitlab.adilcan.erp.service_product.ServiceRepository;
-import com.gitlab.adilcan.erp.service_product.TagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,13 +18,20 @@ public class ServiceController {
     private TagRepository tagRepository;
 
     @GetMapping("")
-    public String getServiceList(Model model){
+    public String getServiceList(Model model, @RequestParam(value = "sale_status", required = false) SaleStatus saleStatus){
+
+        if(saleStatus == null){
+            model.addAttribute("services", serviceRepository.findAll());
+        }
+
+        else {
+            model.addAttribute("services", serviceRepository.findBySaleStatus(saleStatus));
+        }
 
         model.addAttribute("notSaleAndNotPurchaseCount", serviceRepository.countBySaleStatusAndPurchaseStatus(SaleStatus.NOT_FOR_SALE, PurchaseStatus.NOT_FOR_PURCHASE));
         model.addAttribute("forSaleCount", serviceRepository.countBySaleStatusAndPurchaseStatus(SaleStatus.FOR_SALE, PurchaseStatus.NOT_FOR_PURCHASE));
         model.addAttribute("forPurchaseCount", serviceRepository.countBySaleStatusAndPurchaseStatus(SaleStatus.NOT_FOR_SALE, PurchaseStatus.FOR_PURCHASE));
         model.addAttribute("forSaleAndForPurchaseCount", serviceRepository.countBySaleStatusAndPurchaseStatus(SaleStatus.FOR_SALE, PurchaseStatus.FOR_PURCHASE));
-        model.addAttribute("services", serviceRepository.findAll());
         return "services/serviceList";
     }
 

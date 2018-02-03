@@ -3,6 +3,8 @@
   <body>
   <div>
     <a th:href="@{/services/new}" class="btn btn-primary" type="submit">Create Service</a>
+    <a class="btn btn-success" th:href="@{/services?sale_status=FOR_SALE}">For Sale</a>
+    <a class="btn btn-success" th:href="@{/services?sale_status=NOT_FOR_SALE}">Not for Sale</a>
   </div>
   <div class="table-responsive">
     <table class="table table-bordered">
