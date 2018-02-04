@@ -6,5 +6,5 @@ package com.gitlab.adilcan.erp.domain;
  * @author adilcan
  */
 public enum Role {
-	USER, ADMIN;
+	SUPPLIER, CUSTOMER, RESOURCE_MANAGER, ADMIN;
 }

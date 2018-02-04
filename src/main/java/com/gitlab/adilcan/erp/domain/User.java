@@ -36,7 +36,7 @@ public class User extends BaseEntity implements UserDetails {
 	@NotEmpty
 	private String password;
 
-	private Role role = Role.USER;
+	private Role role = Role.CUSTOMER;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
