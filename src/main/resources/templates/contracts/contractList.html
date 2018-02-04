@@ -15,6 +15,7 @@
         <th>Customer</th>
         <th>Supplier</th>
         <th>Third Party</th>
+        <th>Action</th>
       </tr>
       </thead>
       <tbody>
@@ -23,6 +24,11 @@
         <td th:text="*{customer}"></td>
         <td th:text="*{supplier}"></td>
         <td th:text="*{thirdParty}"></td>
+        <td>
+          <form method="post" th:action="@{'/contracts/' + ${contract.id} + '/delete'}">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+        </td>
       </tr>
       </tbody>
     </table>

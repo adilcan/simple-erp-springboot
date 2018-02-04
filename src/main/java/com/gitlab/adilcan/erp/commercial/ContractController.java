@@ -1,5 +1,6 @@
 package com.gitlab.adilcan.erp.commercial;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +8,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-
+import java.util.Optional;
+@Slf4j
 @Controller
 @RequestMapping("/contracts")
 public class ContractController {
@@ -61,6 +63,19 @@ public class ContractController {
     @PostMapping("/{id}/update")
     public String postUpdateContract(@ModelAttribute Contract contract){
         contractRepository.save(contract);
+        return "redirect:/contracts";
+    }
+
+    @PostMapping("/{id}/delete")
+    public String deleteContract(@PathVariable Long id){
+        Optional<Contract> contractOptional = contractRepository.findById(id);
+        if(!contractOptional.isPresent()){
+            log.warn("Contract with id: {} is not present", id);
+        }
+        else {
+            Contract contract = contractOptional.get();
+            contractRepository.delete(contract);
+        }
         return "redirect:/contracts";
     }
 }
