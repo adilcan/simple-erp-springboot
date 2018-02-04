@@ -27,6 +27,7 @@ public class ContractController {
         return "contracts/contractList";
     }
 
+    //@PreAuthorize("hasAnyAuthority('ADMIN', 'CUSTOMER')")
     @GetMapping("/new")
     public String getNewContract(Model model){
         model.addAttribute("contract", new Contract());
