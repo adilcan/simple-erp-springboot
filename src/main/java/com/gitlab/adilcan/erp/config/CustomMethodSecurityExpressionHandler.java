@@ -20,6 +20,7 @@ public class CustomMethodSecurityExpressionHandler extends DefaultMethodSecurity
 
 	@Override
 	protected MethodSecurityExpressionOperations createSecurityExpressionRoot(Authentication authentication, MethodInvocation invocation) {
+
 		final CustomMethodSecurityExpressionRoot root = BeanAccessor.getBean(CustomMethodSecurityExpressionRoot.class, authentication);
 		root.setPermissionEvaluator(getPermissionEvaluator());
 		root.setTrustResolver(this.trustResolver);
